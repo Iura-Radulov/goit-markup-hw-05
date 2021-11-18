@@ -9,6 +9,7 @@
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
   --fon: #f5f4fa;
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -54,6 +55,17 @@ ul {
 }
 .navigation .current {
   color: var(--accent-color);
+  position: relative;
+}
+.navigation .current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 /*-------HEADER---------*/
 
@@ -68,8 +80,8 @@ ul {
   display: flex;
 }
 .logo {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 24px;
+  margin-bottom: 24px;
   color: var(--primary-text-color);
   font-family: Raleway;
   font-weight: 700;
@@ -88,6 +100,7 @@ ul {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+  transition: color 250ms var(--time-function);
 }
 .navigation a:hover,
 .navigation a:focus {
@@ -132,6 +145,7 @@ ul {
 }
 .address-link {
   color: var(--secondary-text-color);
+  transition: color 250ms var(--time-function);
 }
 
 .address-link:hover,
@@ -186,6 +200,7 @@ ul {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 250ms var(--time-function);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -251,6 +266,27 @@ ul {
 .occupation-exemple .item:not(last-child) {
   margin-right: 30px;
 }
+.occupation-exemple .item {
+  position: relative;
+}
+.occupation-exemple img {
+  display: block;
+}
+.occupation-text {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  text-align: center;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--primary-white-color);
+}
 /* -------TEAM----------*/
 
 .team {
@@ -315,6 +351,8 @@ ul {
   height: 45px;
   border: none;
   border-radius: 50%;
+  transition: background-color 250ms var(--time-function),
+    color 1000ms var(--time-function);
 }
 .team-sociallinks .icon {
   width: 20px;
@@ -331,7 +369,6 @@ ul {
 .clients-title {
   padding-top: 94px;
   padding-bottom: 50px;
-  font-family: Roboto;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -351,6 +388,8 @@ ul {
   border: 1px solid #afb1b8;
   color: #afb1b8;
   border-radius: 4px;
+  transition: border 250ms var(--time-function),
+    color 250ms var(--time-function);
 }
 .clients-logo .item:not(:last-child) {
   margin-right: 40px;
@@ -401,7 +440,6 @@ ul {
   margin-top: 72px;
   margin-bottom: 20px;
 
-  font-family: Roboto;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -423,6 +461,7 @@ ul {
   height: 45px;
   border: none;
   border-radius: 50%;
+  transition: background-color 250ms var(--time-function);
 }
 .join-sociallinks a:hover,
 .join-sociallinks a:focus {
@@ -457,6 +496,8 @@ ul {
   background-color: #f5f4fa;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 250ms var(--time-function),
+    color 250ms var(--time-function), box-shadow 250ms var(--time-function);
 }
 .portfolio-button [type="button"]:hover,
 .portfolio-button [type="button"]:focus {
@@ -467,6 +508,7 @@ ul {
 
 .project {
   border: 1px solid #eeeeee;
+  transition: box-shadow 250ms var(--time-function);
 }
 .project:hover,
 .project:focus {

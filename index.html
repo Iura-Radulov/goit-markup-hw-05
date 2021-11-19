@@ -47,7 +47,14 @@
     
     <section class="hero-fon">
         <h1 class="hero">Эффективные решения для вашего бизнеса</h1>
-        <button class="hero-button" type="button">Заказать услугу</button>
+        <button class="hero-button" data-modal-open type="button">Заказать услугу</button>
+
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <button data-modal-close type="button">close</button>        
+            </div>
+        </div>
+
     </section>
     
     <!-- Oсобенности---FEATURE--->
@@ -304,6 +311,6 @@
         </div>
     </footer>
 
-    <script src="./js/modal.js"></script>
+      <script src="./js/modal.js"></script>
 </body>
 </html>
